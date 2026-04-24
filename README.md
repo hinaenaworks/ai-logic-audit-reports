@@ -4,7 +4,7 @@ AI生成コードにおける論理破綻を専門に調査・監査するプロ
 AIは「文法」は書けますが、「ビジネスの論理（ビジネスロジック）」まで完璧には理解していません。本リポジトリでは、AI生成コードに潜む論理的な欠陥（状態遷移の不整合、競合状態、脆弱性）を可視化・修正します。
 
 ## 監査実績 (Case Studies)
-- [CASE 01: [対象機能] における [発見された論理欠陥] (https://github.com/hinaenaworks/ai-logic-audit-reports/blob/main/payment-api-audit.md)
+- [CASE 01: 対象機能における発見された論理欠陥] (https://github.com/hinaenaworks/ai-logic-audit-reports/blob/main/payment-api-audit.md)
 - [CASE 02: 決済ステータス更新APIにおける状態遷移の論理破綻](payment-api-audit.md)
 
 ## サービス内容
