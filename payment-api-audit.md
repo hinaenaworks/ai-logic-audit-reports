@@ -58,7 +58,7 @@ async function updateOrderStatus(req, res) {
 }
 ```
 
-2. 監査結果 (HAP-v1に基づく検証)
+### 2. 監査結果 (HAP-v1に基づく検証)
 Phase 1 Enum Constraint FAIL 
 任意の文字列がステータスとして受け入れられるリスク。
 Phase 2 Transition Rule CRITICAL FAIL 「CANCELLEDから他の状態への遷移禁止」というルールが無視されている。
@@ -67,11 +67,11 @@ Phase 3 State Lockdown FAIL
 Phase 4 Race Condition FAIL 
 取得から保存の間に他プロセスが介入する可能性（楽観的ロック欠如）。
 
-3. 論理的脆弱性の解説
+### 3. 論理的脆弱性の解説
 ​このコードは「値の代入」としては正しいが、「決済ビジネスの整合性」としては完全に破綻している。
 AIは「CANCELLED（キャンセル済み）」がビジネス上の終着点であることを理解せず、単なる文字列として処理している。その結果、キャンセル済みの注文を不正に「PROCESSING（処理中）」へと復帰させ、二重請求や配送トラブルを招く経路が放置されている。
 
-​4. 修正済コード (監査官による処方箋)
+### ​4. 修正済コード (監査官による処方箋)
 ```const VALID_TRANSITIONS = {
   'PENDING': ['PROCESSING', 'CANCELLED'],
   'PROCESSING': ['COMPLETED', 'CANCELLED']
