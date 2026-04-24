@@ -15,7 +15,8 @@ AI生成コードの信頼性を担保するための以下の監査・レビュ
 
 ## 監査依頼・ご相談
 個別のコードレビューや、開発プロセスにおける論理監査のご依頼は、以下よりご連絡ください。
-- [X (Twitter) DM](https://x.com/messages/compose?recipient_id=[hinaenaworks])
+- - [X (Twitter) DM](https://x.com/hinaenaworks)
+​※DMはプロフィールページの「メッセージ（メールのアイコン）」から送信してください。
 - [Zenn (メッセージ)](https://zenn.dev/hinaena)
 
 ※NDA締結後の詳細なコードレビューや、長期的な品質保証アドバイザーのご相談も可能です。
