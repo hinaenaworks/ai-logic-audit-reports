@@ -55,7 +55,7 @@ async function updateOrderStatus(req, res) {
   await db.orders.save(order);
 
   return res.status(200).json({ message: "Order updated successfully", order });
-}
+}```
 
 2. 監査結果 (HAP-v1に基づく検証)
 Phase 1 Enum Constraint FAIL 
@@ -70,7 +70,7 @@ Phase 4 Race Condition FAIL
 ​このコードは「値の代入」としては正しいが、「決済ビジネスの整合性」としては完全に破綻している。
 AIは「CANCELLED（キャンセル済み）」がビジネス上の終着点であることを理解せず、単なる文字列として処理している。その結果、キャンセル済みの注文を不正に「PROCESSING（処理中）」へと復帰させ、二重請求や配送トラブルを招く経路が放置されている。
 ​4. 修正済コード (監査官による処方箋)
-const VALID_TRANSITIONS = {
+```const VALID_TRANSITIONS = {
   'PENDING': ['PROCESSING', 'CANCELLED'],
   'PROCESSING': ['COMPLETED', 'CANCELLED']
 };
@@ -96,4 +96,4 @@ async function updateOrderStatus(req, res) {
   await db.orders.save(order);
 
   return res.status(200).json({ message: "Success", order });
-}
+}```
