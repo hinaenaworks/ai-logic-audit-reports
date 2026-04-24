@@ -55,7 +55,8 @@ async function updateOrderStatus(req, res) {
   await db.orders.save(order);
 
   return res.status(200).json({ message: "Order updated successfully", order });
-}```
+}
+```
 
 2. 監査結果 (HAP-v1に基づく検証)
 Phase 1 Enum Constraint FAIL 
@@ -96,4 +97,5 @@ async function updateOrderStatus(req, res) {
   await db.orders.save(order);
 
   return res.status(200).json({ message: "Success", order });
-}```
+}
+```
